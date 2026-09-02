@@ -7,18 +7,18 @@ const bars = [8, 14, 22, 30, 18, 26, 34, 20, 12, 24, 30, 16, 10, 20, 28, 14, 8, 
     <h3>Call</h3>
     <div class="vig" aria-hidden="true">
       <div style="font-weight:700;color:var(--ink);margin-bottom:.6rem">AI Agent</div>
-      <div class="wave">{bars.map((h) => <i style={`height:${h}px`}></i>)}</div>
+      <div class="wave">{bars.map((h, i) => <i style={`height:${h}px;--i:${i};--k:${i % 3}`}></i>)}</div>
       <div class="quiet" style="text-align:center;margin-top:.6rem">00:42</div>
     </div>
   </div>
   <div class="tile">
     <h3>Text</h3>
     <div class="vig" aria-hidden="true">
-      <div class="thread">
-        <div class="bubble user">What should I know before I decide?</div>
+      <div class="thread" data-typing-thread>
+        <div class="bubble user"><span data-typed>What should I know before I decide?</span></div>
         <div class="agent-row">
           <img src="/images/cin-mark.png" alt="" width="34" height="34" />
-          <div class="bubble agent"><div class="agent-label">AI Agent</div>Here is the simple version.</div>
+          <div class="bubble agent"><div class="agent-label">AI Agent</div><span data-typed>Here is the simple version.</span></div>
         </div>
       </div>
     </div>
@@ -36,3 +36,34 @@ const bars = [8, 14, 22, 30, 18, 26, 34, 20, 12, 24, 30, 16, 10, 20, 28, 14, 8, 
     </div>
   </div>
 </div>
+
+<script>
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const thread = document.querySelector('[data-typing-thread]');
+  if (thread && !reduce) {
+    const spans = Array.from(thread.querySelectorAll('[data-typed]'));
+    const texts = spans.map((el) => el.textContent || '');
+    // reserve the final height so bubbles don't jump while typing
+    spans.forEach((el) => { const b = el.closest('.bubble'); if (b) { b.style.minHeight = b.offsetHeight + 'px'; b.style.minWidth = b.offsetWidth + 'px'; } });
+    const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+    const type = async (el, text, speed) => {
+      el.classList.add('typing');
+      for (let i = 1; i <= text.length; i++) { el.textContent = text.slice(0, i); await sleep(speed + Math.random() * 30); }
+      el.classList.remove('typing');
+    };
+    const dots = (el) => { el.classList.add('dots'); el.textContent = ''; };
+    (async () => {
+      while (true) {
+        spans.forEach((el) => { el.textContent = ''; el.classList.remove('dots', 'typing'); });
+        await sleep(700);
+        await type(spans[0], texts[0], 42);
+        await sleep(600);
+        dots(spans[1]);
+        await sleep(1100);
+        spans[1].classList.remove('dots');
+        await type(spans[1], texts[1], 34);
+        await sleep(4200);
+      }
+    })();
+  }
+</script>
