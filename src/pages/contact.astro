@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { networks } from '../data/networks';
+import { publishedNetworks as networks } from '../data/networks';
 ---
 <BaseLayout
   title="Contact — Consumer Information Network"
@@ -10,7 +10,7 @@ import { networks } from '../data/networks';
   <section class="section">
     <div class="wrap"><div class="prose stack">
       <h1>Contact</h1>
-      <p style="font-size:1.15rem">For questions about Consumer Information Network or any of the Information Networks, use one of the channels below. Every conversation starts with you; we only reach out in response to your inquiry.</p>
+      <p style="font-size:1.15rem">For questions about Consumer Information Network or any of the Information Networks, use one of the channels below. Every conversation starts with you.</p>
 
       <h2>Business contact</h2>
       <p>
@@ -26,7 +26,7 @@ import { networks } from '../data/networks';
         {networks.map((n) => (
           <div style="display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;border-bottom:1px solid var(--border)">
             <dt style="font-weight:600;color:var(--ink)"><a href={`/${n.slug}`} style="color:inherit">{n.brandName}</a></dt>
-            <dd style="margin:0">{n.tollFreeTel ? <a href={`tel:${n.tollFreeTel}`}>{n.tollFree}</a> : <span class="quiet">Phone number coming soon</span>}</dd>
+            <dd style="margin:0">{n.tollFreeTel ? <a href={`tel:${n.tollFreeTel}`}>{n.tollFree}</a> : <span class="quiet">Preparing to launch</span>}</dd>
           </div>
         ))}
       </dl>

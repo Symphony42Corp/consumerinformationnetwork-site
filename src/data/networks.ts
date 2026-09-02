@@ -10,6 +10,7 @@ export interface Network {
   shortName: string;       // "Auto Insurance"
   group: 'Insurance' | 'Care' | 'Finances';
   status: Status;
+  published?: boolean;    // false = keep the data, do not render or list the page
   tollFree?: string;       // display, e.g. "888-610-5950"
   tollFreeTel?: string;    // tel: link, e.g. "+18886105950"
   tagline: string;
@@ -162,6 +163,7 @@ export const networks: Network[] = [
   {
     slug: 'debt-relief-information-network',
     brandName: 'Debt Relief Information Network',
+    published: false, // unpublished during the ad-platform brand review (SPF ruling, Sept 2 2026)
     shortName: 'Debt Relief',
     group: 'Finances',
     status: 'coming',
@@ -199,6 +201,10 @@ export const networks: Network[] = [
 
 export const groupsInOrder: Network['group'][] = ['Insurance', 'Care', 'Finances'];
 
+export const publishedNetworks = networks.filter((n) => n.published !== false);
+
 export function byGroup(): { group: Network['group']; items: Network[] }[] {
-  return groupsInOrder.map((group) => ({ group, items: networks.filter((n) => n.group === group) }));
+  return groupsInOrder
+    .map((group) => ({ group, items: publishedNetworks.filter((n) => n.group === group) }))
+    .filter((g) => g.items.length > 0);
 }

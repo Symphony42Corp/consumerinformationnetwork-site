@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StatusBadge from '../components/StatusBadge.astro';
 import HowItWorks from '../components/HowItWorks.astro';
-import { networks, type Network } from '../data/networks';
+import { publishedNetworks as networks, type Network } from '../data/networks';
 
 export function getStaticPaths() {
   return networks.map((n) => ({ params: { slug: n.slug }, props: { n } }));
@@ -24,7 +24,8 @@ const path = `/${n.slug}`;
       {n.tollFreeTel ? (
         <p class="mt-1"><a class="btn" href={`tel:${n.tollFreeTel}`}>Call {n.tollFree}</a></p>
       ) : (
-        <p class="mt-1"><span class="chip">Phone number coming soon</span></p>
+        <p class="mt-1"><span class="chip">Preparing to launch</span></p>
+        <p class="quiet">This network is preparing to launch; its phone line is not yet active.</p>
       )}
       <p class="quiet">Available 24 hours a day, 7 days a week. No cost to consumers.</p>
     </div></div>
@@ -58,7 +59,7 @@ const path = `/${n.slug}`;
   <section class="section-tight">
     <div class="wrap"><div class="prose stack">
       <h2>Consent and recording</h2>
-      <p>By calling, you agree to interact with our AI Agent and to have the call recorded for quality and compliance. You may end the call at any time.</p>
+      <p>By calling, you agree to interact with our AI Agent and to have the call recorded for quality and compliance. You may end the call at any time. If you ask to be connected, your phone number and the details you shared are passed to that provider, which may record the call under its own policies.</p>
 
       <h2>What Consumer Information Network does not do</h2>
       <p>{n.notDo}</p>

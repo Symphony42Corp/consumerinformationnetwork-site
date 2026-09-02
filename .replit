@@ -66,14 +66,6 @@ from = "/contact/"
 to = "/contact.html"
 
 [[deployment.rewrites]]
-from = "/debt-relief-information-network"
-to = "/debt-relief-information-network.html"
-
-[[deployment.rewrites]]
-from = "/debt-relief-information-network/"
-to = "/debt-relief-information-network.html"
-
-[[deployment.rewrites]]
 from = "/debt-relief"
 to = "/debt-relief.html"
 

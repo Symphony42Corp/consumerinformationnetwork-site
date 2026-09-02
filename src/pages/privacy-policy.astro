@@ -1,17 +1,21 @@
 ---
-// PRIVACY POLICY — the live policy text is preserved verbatim from
-// https://www.consumerinformationnetwork.com/privacy-policy (captured Sept 2, 2026).
-// Only the "Vertical-Specific Information" subsection is new. Three existing passages are
-// flagged for counsel review with HTML comments; the wording itself is unchanged.
+// PRIVACY POLICY — the live policy text is preserved from
+// https://www.consumerinformationnetwork.com/privacy-policy (captured Sept 2, 2026),
+// with the edits listed in `edits` below (each an SPF ruling of Sept 2, 2026; see BUILD_NOTES.md)
+// and one new subsection, "Vertical-Specific Information".
 import BaseLayout from '../layouts/BaseLayout.astro';
 import legal from '../data/legal.json';
 const blocks = legal.privacy as { tag: string; text: string }[];
 
-const flags: Record<string, string> = {
-  'annual third-party security audits': 'COUNSEL REVIEW REQUIRED: confirm annual third-party security audits are performed and documented; otherwise soften to commercially reasonable safeguards (see BUILD_NOTES.md).',
-  'retained indefinitely': 'COUNSEL REVIEW REQUIRED: "retained indefinitely" — recommended reformulation to retention for as long as reasonably necessary (see BUILD_NOTES.md).',
-  'protected health information': 'COUNSEL REVIEW REQUIRED: confirm the no-PHI statement remains accurate as Senior Care Information Network launches (see BUILD_NOTES.md).',
-};
+const edits: [string, string][] = [
+  // Opening summary: drop the absolute promises and the cold-calling mention.
+  ['Plain-language snapshot: Consumer Information Network collects only what you provide or what is needed to route your question, keeps it secure, never cold-calls you, and deletes your data on request.',
+   'Plain-language snapshot: We collect information you provide, information generated through your interactions, and limited technical and advertising information. We use it to operate our AI-powered information and referral service, measure our advertising, improve service quality, and connect you with participating providers when you ask. Privacy requests are honored subject to applicable legal exceptions.'],
+  // Security and retention: claim only what is defensible.
+  ['We use encryption in transit and at rest, strict access controls, and annual third-party security audits. Interaction data is retained indefinitely for AI-improvement and compliance purposes unless you request deletion.',
+   'We use reasonable administrative, technical, and organizational safeguards designed to protect personal information, including encryption in transit and access controls. Interaction data is retained for as long as reasonably necessary for service delivery, quality assurance, compliance, security, dispute resolution, and service improvement, unless you request deletion and deletion is legally and operationally permitted.'],
+];
+const applyEdits = (t: string) => edits.reduce((acc, [a, b]) => (acc === a ? b : acc), t);
 const insertAfter = 'We do not ask for or intentionally collect Social Security numbers';
 ---
 <BaseLayout
@@ -22,23 +26,23 @@ const insertAfter = 'We do not ask for or intentionally collect Social Security 
   <section class="section">
     <div class="wrap"><div class="prose legal">
       <h1>Privacy Policy</h1>
+      <p>Updated September 2026</p>
       {blocks.map((b) => {
-        const flag = Object.keys(flags).find((k) => b.text.includes(k));
+        const text = applyEdits(b.text);
         const el = b.tag === 'h2'
           ? null
           : b.tag === 'h3'
-            ? <h3>{b.text}</h3>
+            ? <h3>{text}</h3>
             : b.tag === 'li'
-              ? <ul class="bullets"><li>{b.text}</li></ul>
-              : <p>{b.text}</p>;
+              ? <ul class="bullets"><li>{text}</li></ul>
+              : <p>{text}</p>;
         return (
           <>
-            {flag && <Fragment set:html={`<!-- ${flags[flag]} -->`} />}
             {el}
             {b.text.startsWith(insertAfter) && (
               <div class="added">
                 <h3>Vertical-Specific Information</h3>
-                <p>Depending on the Information Network you use, you may choose to provide category-specific information such as vehicle details, property details, insurance interests, approximate debt-related information, final expense planning preferences, senior-care preferences, state of residence, timing, budget ranges, or other details relevant to your request. We use this information to provide AI-generated general information, improve routing, and, when you request it, help connect you with an independent participating provider or resource. We do not collect protected health information through AI Agent interactions.</p>
+                <p>Depending on the Information Network you use, you may choose to provide category-specific information such as vehicle details, property details, insurance interests, final expense planning preferences, senior-care preferences, state of residence, timing, budget ranges, or other details relevant to your request. We use this information to provide AI-generated general information, improve routing, and, when you request it, help connect you with an independent participating provider or resource. We do not collect protected health information through AI Agent interactions.</p>
               </div>
             )}
           </>

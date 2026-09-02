@@ -17,7 +17,7 @@ const contactStart = 'For questions or concerns about these Terms';
       <h1>Terms of Service</h1>
       {blocks.map((b) => {
         if (b.text === 'Updated June 2025') {
-          return <><Fragment set:html={'<!-- COUNSEL REVIEW: date advanced from June 2025 because Sections 8 and 9 were added (see BUILD_NOTES.md) -->'} /><p>Updated September 2026</p></>;
+          return <p>Updated September 2026</p>;
         }
         if (b.text.startsWith(contactStart)) {
           return (
@@ -32,7 +32,8 @@ const contactStart = 'For questions or concerns about these Terms';
             </>
           );
         }
-        return b.tag === 'h3' ? <h3>{b.text}</h3> : <p>{b.text}</p>;
+        const text = b.text.replace('CIN does not place unsolicited outbound calls or texts.', 'The Service is available only when you initiate contact with us.');
+        return b.tag === 'h3' ? <h3>{text}</h3> : <p>{text}</p>;
       })}
     </div></div>
   </section>

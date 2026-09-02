@@ -14,7 +14,7 @@ export default defineConfig({
     '/auto-insurance': '/auto-insurance-information-network',
     '/auto-insurance-1': '/home-insurance-information-network',
     '/home-insurance': '/home-insurance-information-network',
-    '/debt-relief': '/debt-relief-information-network',
+    '/debt-relief': '/information-networks',
     '/burial-insurance': '/burial-insurance-information-network',
     '/senior-care': '/senior-care-information-network',
   },
