@@ -1,0 +1,25 @@
+---
+interface Props { path: string }
+const { path } = Astro.props;
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/information-networks', label: 'Information Networks' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+<header class="nav-wrap">
+  <div class="wrap">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/">
+        <img src="/images/cin-mark.png" alt="Consumer Information Network mark" width="40" height="40" />
+        <span>Consumer Information Network</span>
+      </a>
+      <ul>
+        {links.map((l) => (
+          <li><a class="link" href={l.href} aria-current={path === l.href ? 'page' : undefined}>{l.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>

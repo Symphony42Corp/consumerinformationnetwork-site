@@ -1,0 +1,39 @@
+---
+// TERMS OF SERVICE — the live terms are preserved verbatim from
+// https://www.consumerinformationnetwork.com/terms-of-service (captured Sept 2, 2026).
+// Two sections are new (8 and 9). The "Updated" line reflects the addition and is flagged for counsel.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import legal from '../data/legal.json';
+const blocks = (legal.terms as { tag: string; text: string }[]).filter((b) => b.tag !== 'h2');
+const contactStart = 'For questions or concerns about these Terms';
+---
+<BaseLayout
+  title="Terms of Service — Consumer Information Network"
+  description="Terms governing use of Consumer Information Network's AI-powered information and referral service."
+  path="/terms-of-service"
+>
+  <section class="section">
+    <div class="wrap"><div class="prose legal">
+      <h1>Terms of Service</h1>
+      {blocks.map((b) => {
+        if (b.text === 'Updated June 2025') {
+          return <><Fragment set:html={'<!-- COUNSEL REVIEW: date advanced from June 2025 because Sections 8 and 9 were added (see BUILD_NOTES.md) -->'} /><p>Updated September 2026</p></>;
+        }
+        if (b.text.startsWith(contactStart)) {
+          return (
+            <>
+              <div class="added">
+                <h3>Section 8 – Category-Specific Service Limitations</h3>
+                <p>Consumer Information Network does not provide insurance advice, insurance quotes directly, insurance policies, debt settlement, debt negotiation, credit repair, credit counseling, financial advice, legal advice, medical advice, healthcare services, senior care services, or emergency services. AI-generated information is for general educational purposes only and should not be relied on as a substitute for advice from a qualified licensed professional.</p>
+                <h3>Section 9 – Third-Party Provider Independence</h3>
+                <p>Third-party providers introduced to consumers through CIN's referral connections are independent from CIN. CIN is not responsible for third-party pricing, eligibility decisions, advice, representations, products, services, fees, contracts, or consumer outcomes. Any consumer relationship resulting from a referral connection is between the consumer and the third-party provider directly.</p>
+              </div>
+              <p>{b.text}</p>
+            </>
+          );
+        }
+        return b.tag === 'h3' ? <h3>{b.text}</h3> : <p>{b.text}</p>;
+      })}
+    </div></div>
+  </section>
+</BaseLayout>

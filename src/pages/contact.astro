@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { networks } from '../data/networks';
+---
+<BaseLayout
+  title="Contact — Consumer Information Network"
+  description="Contact information for Consumer Information Network, LLC, including the phone numbers for each Information Network."
+  path="/contact"
+>
+  <section class="section">
+    <div class="wrap"><div class="prose stack">
+      <h1>Contact</h1>
+      <p style="font-size:1.15rem">For questions about Consumer Information Network or any of the Information Networks, use one of the channels below. Every conversation starts with you; we only reach out in response to your inquiry.</p>
+
+      <h2>Business contact</h2>
+      <p>
+        Consumer Information Network, LLC<br />
+        2 Village Square, Suite 220<br />
+        Baltimore, MD 21210<br />
+        Phone: <a href="tel:+14103571232">(410) 357-1232</a><br />
+        Email: <a href="mailto:info@consumerinformationnetwork.com">info@consumerinformationnetwork.com</a>
+      </p>
+
+      <h2>Information Network phone numbers</h2>
+      <dl>
+        {networks.map((n) => (
+          <div style="display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;border-bottom:1px solid var(--border)">
+            <dt style="font-weight:600;color:var(--ink)"><a href={`/${n.slug}`} style="color:inherit">{n.brandName}</a></dt>
+            <dd style="margin:0">{n.tollFreeTel ? <a href={`tel:${n.tollFreeTel}`}>{n.tollFree}</a> : <span class="quiet">Phone number coming soon</span>}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <h2>Publisher, platform, and carrier inquiries</h2>
+      <p>Background on our entity structure, business model, and disclosures is on the <a href="/about">About</a> page. For verification or review questions, email <a href="mailto:info@consumerinformationnetwork.com">info@consumerinformationnetwork.com</a>.</p>
+
+      <h2>Privacy requests</h2>
+      <p>To request access to or deletion of your personal data, email <a href="mailto:privacy@consumerinformationnetwork.com">privacy@consumerinformationnetwork.com</a>. See our <a href="/privacy-policy">Privacy Policy</a>.</p>
+    </div></div>
+  </section>
+</BaseLayout>

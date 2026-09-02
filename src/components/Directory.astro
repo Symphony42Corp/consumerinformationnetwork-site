@@ -1,0 +1,27 @@
+---
+import { byGroup } from '../data/networks';
+import StatusBadge from './StatusBadge.astro';
+interface Props { showLink?: boolean }
+const { showLink = true } = Astro.props;
+const groups = byGroup();
+---
+<div class="dir-groups">
+  {groups.map(({ group, items }) => (
+    <div class="dir-group">
+      <h4>{group}</h4>
+      <ul>
+        {items.map((n) => (
+          <li>
+            <a href={`/${n.slug}`}>
+              <span class={`status status-${n.status}`}><span class="dot" aria-hidden="true"></span></span>
+              {n.shortName}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))}
+</div>
+{showLink && (
+  <p class="center mt-2"><a class="btn-ghost" href="/information-networks">See all Information Networks <span aria-hidden="true">→</span></a></p>
+)}

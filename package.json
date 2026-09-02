@@ -1,0 +1,21 @@
+{
+  "name": "consumerinformationnetwork-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "node scripts/check-forbidden.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.2.1",
+    "@fontsource-variable/manrope": "^5.1.0",
+    "@fontsource/instrument-serif": "^5.1.0",
+    "astro": "^5.0.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.49.1"
+  }
+}

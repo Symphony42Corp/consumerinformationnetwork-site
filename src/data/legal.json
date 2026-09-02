@@ -1,0 +1,262 @@
+{
+ "privacy": [
+  {
+   "tag": "h2",
+   "text": "Consumer Information Network Privacy Policy"
+  },
+  {
+   "tag": "p",
+   "text": "Plain-language snapshot: Consumer Information Network collects only what you provide or what is needed to route your question, keeps it secure, never cold-calls you, and deletes your data on request."
+  },
+  {
+   "tag": "h3",
+   "text": "Introduction"
+  },
+  {
+   "tag": "p",
+   "text": "Consumer Information Network, LLC, a wholly-owned subsidiary of Symphony42 Corporation, is committed to respecting the privacy of all individuals who use our AI-powered information service. This Privacy Policy outlines how we collect, use, and protect your personal information. By clicking or tapping on our digital ads or links and engaging with our AI Agents via chat, phone, or video/avatar, you consent to the terms of this Privacy Policy."
+  },
+  {
+   "tag": "h3",
+   "text": "1. Who We Are"
+  },
+  {
+   "tag": "p",
+   "text": "Consumer Information Network, LLC (“CIN,” “we,” “us,” or “our”), a wholly-owned subsidiary of Symphony42 Corporation, operates an AI-powered information and referral service that you may access by text, voice phone call, or video/avatar session."
+  },
+  {
+   "tag": "h3",
+   "text": "2. Scope and Consent"
+  },
+  {
+   "tag": "p",
+   "text": "By calling, texting, emailing, chatting, clicking our ads, or otherwise engaging with any Consumer Information Network AI agent, you agree to the collection, use, and sharing of information as described in this Privacy Policy."
+  },
+  {
+   "tag": "h3",
+   "text": "3. Information We Collect"
+  },
+  {
+   "tag": "li",
+   "text": "Contact data such as your phone number or email address so we can respond to you."
+  },
+  {
+   "tag": "li",
+   "text": "Session content, such as text messages, call audio, and video transcripts, so our AI can generate accurate answers and we can monitor quality."
+  },
+  {
+   "tag": "li",
+   "text": "Technical and usage data, including device type, browser, IP address, timestamps, and whether you contacted us by text, voice, or video, used to secure and optimize our service."
+  },
+  {
+   "tag": "li",
+   "text": "Optional details you choose to share—e.g., state of residence or product interests—used only to personalize guidance or route you to relevant licensed professionals."
+  },
+  {
+   "tag": "p",
+   "text": "We do not ask for or intentionally collect Social Security numbers, full payment-card data, or protected health information."
+  },
+  {
+   "tag": "h3",
+   "text": "4. How We Use Information"
+  },
+  {
+   "tag": "p",
+   "text": "We use the information we collect to (a) deliver real-time answers, (b) improve and train AI language models using de-identified transcripts, and (c) maintain quality, security, and other legal compliance. Voice and video/avatar sessions may be recorded for these purposes."
+  },
+  {
+   "tag": "h3",
+   "text": "5. Transfers to Experts and Professionals"
+  },
+  {
+   "tag": "p",
+   "text": "If you ask to be connected with a human expert, your Caller ID and relevant details are shared only with that specific business. All voice and video calls are recorded, with your consent, for quality and compliance."
+  },
+  {
+   "tag": "h3",
+   "text": "6. Your Choices"
+  },
+  {
+   "tag": "p",
+   "text": "You may request access to or deletion of your personal data, or opt out of future AI training use, by emailing privacy@consumerinformationnetwork.com or calling (410) 357-1232. You may also end any session at any time; if you do not wish to be recorded, inform the agent at the start of the conversation."
+  },
+  {
+   "tag": "h3",
+   "text": "7. Data Security and Retention"
+  },
+  {
+   "tag": "p",
+   "text": "We use encryption in transit and at rest, strict access controls, and annual third-party security audits. Interaction data is retained indefinitely for AI-improvement and compliance purposes unless you request deletion."
+  },
+  {
+   "tag": "h3",
+   "text": "8. Children’s Privacy"
+  },
+  {
+   "tag": "p",
+   "text": "Consumer Information Network is intended for users 18 years or older. We do not knowingly collect information from children."
+  },
+  {
+   "tag": "h3",
+   "text": "9. International Users"
+  },
+  {
+   "tag": "p",
+   "text": "Our services are operated in the United States. By using Consumer Information Network, you consent to U.S. processing and storage of your data."
+  },
+  {
+   "tag": "h3",
+   "text": "10. Changes to This Policy"
+  },
+  {
+   "tag": "p",
+   "text": "We may update this Privacy Policy from time to time. We will post the revised version with a new effective date. Continued use of our services after an update means you accept the revised terms. This policy was updated last in June 2025."
+  },
+  {
+   "tag": "h3",
+   "text": "11. Contact Us"
+  },
+  {
+   "tag": "p",
+   "text": "Consumer Information Network, 2 Village Square, Suite 220, Baltimore, MD 21210, USA"
+  },
+  {
+   "tag": "p",
+   "text": "Phone: (410) 357-1232"
+  },
+  {
+   "tag": "p",
+   "text": "Email: privacy@consumerinformationnetwork.com"
+  },
+  {
+   "tag": "p",
+   "text": "If you have any questions or concerns about this Privacy Policy or our data handling practices, we encourage you to contact us at info@consumerinformationnetwork.com"
+  }
+ ],
+ "terms": [
+  {
+   "tag": "h2",
+   "text": "Consumer Information Network"
+  },
+  {
+   "tag": "h2",
+   "text": "Terms of Service"
+  },
+  {
+   "tag": "p",
+   "text": "Updated June 2025"
+  },
+  {
+   "tag": "p",
+   "text": "By calling, texting, emailing, chatting, clicking our links or ads, or using any voice, text, or video/avatar interaction with our AI-powered information service (the “Service”), you agree to be bound by these Terms of Service (“Terms”) and by the Consumer Information Network Privacy Policy (“Privacy Policy”). The Service is operated by Consumer Information Network, LLC (“CIN,” “we,” “us,” or “our”), a wholly-owned subsidiary of Symphony42 Corporation."
+  },
+  {
+   "tag": "h3",
+   "text": "Section 1 – Using Our Service"
+  },
+  {
+   "tag": "p",
+   "text": "1.1  Age Requirement You must be 18 years of age or older to use the Service."
+  },
+  {
+   "tag": "p",
+   "text": "1.2  User Responsibility You are solely responsible for the content of any text, voice, or video communications you transmit while using the Service."
+  },
+  {
+   "tag": "p",
+   "text": "1.3  Prohibited Content You may not transmit content that is threatening, harassing, invasive of privacy, unlawful, or otherwise objectionable as determined by us."
+  },
+  {
+   "tag": "p",
+   "text": "1.4  Intellectual Property You may not falsify, delete, or modify attribution, copyright, legal notices, or proprietary designations in any content exchanged through the Service."
+  },
+  {
+   "tag": "p",
+   "text": "1.5  Automated Systems You may not use bots, scripts, or other automated systems to collect information from or otherwise interact with the Service."
+  },
+  {
+   "tag": "p",
+   "text": "1.6  Service Integrity You agree not to access or use the Service in any manner that could damage, disable, overburden, or impair its functionality."
+  },
+  {
+   "tag": "p",
+   "text": "1.7  Violations Violation of these Terms may result in suspension or permanent blocking of your access to the Service."
+  },
+  {
+   "tag": "h3",
+   "text": "Section 2 – Disclaimers"
+  },
+  {
+   "tag": "p",
+   "text": "2.1  No Warranties The Service is provided “as is” without warranties of any kind, whether express or implied, including warranties of merchantability, fitness for a particular purpose, accuracy, or non-infringement."
+  },
+  {
+   "tag": "p",
+   "text": "2.2  Informational Use Only AI responses are provided for general informational purposes and do not constitute legal, financial, medical, or other professional advice. CIN is an information and referral service and is not an insurance carrier, financial institution, or licensed professional advisor."
+  },
+  {
+   "tag": "p",
+   "text": "2.3  Limitations We are not liable for interruptions, data loss, inaccurate information, or other technical issues arising from your use of the Service."
+  },
+  {
+   "tag": "p",
+   "text": "2.4  Modifications We may modify, suspend, or discontinue the Service—or these Terms—at any time without notice. Changes are effective immediately upon posting."
+  },
+  {
+   "tag": "h3",
+   "text": "Section 3 – Limitation of Liability"
+  },
+  {
+   "tag": "p",
+   "text": "3.1  Exclusions In no event shall CIN or its service providers be liable for indirect, incidental, special, or consequential damages arising from your use of the Service."
+  },
+  {
+   "tag": "p",
+   "text": "3.2  Liability Cap Total liability for all claims relating to the Service is limited to the amount you paid, if any, to use the Service."
+  },
+  {
+   "tag": "h3",
+   "text": "Section 4 – Indemnification"
+  },
+  {
+   "tag": "p",
+   "text": "You agree to indemnify and hold harmless CIN, its affiliates, and its service providers from any third-party claims, damages, or liabilities resulting from your use of the Service in violation of these Terms."
+  },
+  {
+   "tag": "h3",
+   "text": "Section 5 – Consent to Recording and Referral"
+  },
+  {
+   "tag": "p",
+   "text": "All voice and video calls are recorded, with your consent, for quality assurance and compliance. At your request, our AI may transfer you to an expert, professional or business; when you consent to such transfer your Caller ID and relevant details will be shared only with that party. CIN does not place unsolicited outbound calls or texts."
+  },
+  {
+   "tag": "h3",
+   "text": "Section 6 – Arbitration and Dispute Resolution"
+  },
+  {
+   "tag": "p",
+   "text": "Any dispute arising out of or relating to your use of the Service shall be resolved by binding arbitration administered by the American Arbitration Association under its Consumer Arbitration Rules. Either party may bring an individual claim in small-claims court as an alternative. You may opt out of arbitration within 30 days of first accepting these Terms by emailing legal@consumerinformationnetwork.com ."
+  },
+  {
+   "tag": "h3",
+   "text": "Section 7 – General Provisions"
+  },
+  {
+   "tag": "p",
+   "text": "7.1  Governing Law These Terms are governed by the laws of the State of Delaware, United States, without regard to conflict-of-law principles."
+  },
+  {
+   "tag": "p",
+   "text": "7.2  Notices CIN may provide notices via email, SMS, or postings on the Service."
+  },
+  {
+   "tag": "p",
+   "text": "7.3  Entire Agreement These Terms, together with the Privacy Policy, constitute the entire agreement between you and CIN regarding the Service."
+  },
+  {
+   "tag": "p",
+   "text": "For questions or concerns about these Terms, contact info@consumerinformationnetwork.com or write to: Consumer Information Network, 2 Village Square, Suite 220, Baltimore, MD 21210, USA."
+  }
+ ]
+}

@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ModalityTiles from '../components/ModalityTiles.astro';
+import Directory from '../components/Directory.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+const qualities = [
+  ['Deep on one subject.', 'Every option, cost, and fine-print detail.'],
+  ['Your whole story.', 'It keeps every detail you share in mind.'],
+  ['Patient, without limit.', 'No hurry, no judgment, no hold music.'],
+  ['Honest about what it is.', 'It\u2019s AI, and it says so.'],
+];
+---
+<BaseLayout
+  title="Consumer Information Network — Expert AI Agents for the decisions that matter"
+  description="Expert AI Agents for the decisions that matter. Each one knows its category deeply and explains your situation simply. Always free. Available 24/7."
+  path="/"
+>
+  <section class="section" style="padding-bottom:1.5rem">
+    <div class="wrap">
+      <h1 style="max-width:18ch">Expert AI Agents for the decisions that <em>matter</em>.</h1>
+      <p style="font-size:1.2rem;max-width:44ch;margin:1.4rem 0 1.6rem">Each one knows its category deeply and explains your situation simply.</p>
+      <p><a class="btn" href="/information-networks">Explore the Information Networks</a></p>
+      <p class="quiet">Always free. Available 24/7.</p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="wrap"><ModalityTiles /></div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>Built for your situation, not a script.</h2>
+      <div class="grid-4 mt-2">
+        {qualities.map(([t, b]) => (
+          <div class="card">
+            <h3 style="margin-bottom:.5rem">{t}</h3>
+            <p style="margin:0">{b}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="wrap">
+      <div class="panel">
+        <h2>One Information Network for each decision.</h2>
+        <Directory />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="mb-1">How it works</h2>
+      <div class="mt-2"><HowItWorks /></div>
+    </div>
+  </section>
+</BaseLayout>

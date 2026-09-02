@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StatusBadge from '../components/StatusBadge.astro';
+import { byGroup } from '../data/networks';
+const groups = byGroup();
+---
+<BaseLayout
+  title="Information Networks — Consumer Information Network"
+  description="One Information Network for each decision. Each network provides AI-generated information first and an optional connection to independent providers when you ask."
+  path="/information-networks"
+>
+  <section class="section">
+    <div class="wrap">
+      <h1 style="max-width:16ch">One Information Network for each decision.</h1>
+      <p class="prose" style="font-size:1.15rem;margin-top:1.2rem">Every network works the same way: an Expert AI Agent that knows its category, clear answers in simple words, and an optional connection to a human Expert when you ask. New networks are added as they launch.</p>
+    </div>
+  </section>
+  {groups.map(({ group, items }) => (
+    <section class="section-tight">
+      <div class="wrap">
+        <p class="eyebrow">{group}</p>
+        <div class="grid-3">
+          {items.map((n) => (
+            <a class="card" href={`/${n.slug}`} style="display:block;color:inherit">
+              <div style="margin-bottom:.8rem"><StatusBadge status={n.status} /></div>
+              <h3 style="margin-bottom:.5rem">{n.brandName}</h3>
+              <p style="margin:0">{n.tagline}.</p>
+              <p style="margin:.8rem 0 0"><span class="btn-ghost">Learn more <span aria-hidden="true">→</span></span></p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+  <section class="section">
+    <div class="wrap">
+      <div class="disclosure prose">
+        Information provided by our AI Agents is for general educational purposes. Consumer Information Network is an information and referral service and is not a licensed provider of insurance, debt-relief, financial, legal, medical, or senior-care services.
+      </div>
+    </div>
+  </section>
+</BaseLayout>

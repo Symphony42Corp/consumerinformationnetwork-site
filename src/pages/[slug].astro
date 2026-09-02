@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StatusBadge from '../components/StatusBadge.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import { networks, type Network } from '../data/networks';
+
+export function getStaticPaths() {
+  return networks.map((n) => ({ params: { slug: n.slug }, props: { n } }));
+}
+const { n } = Astro.props as { n: Network };
+const path = `/${n.slug}`;
+---
+<BaseLayout title={`${n.brandName} — Consumer Information Network`} description={n.metaDescription} path={path}>
+  <section class="section" style="padding-bottom:1.5rem">
+    <div class="wrap"><div class="prose">
+      <p class="eyebrow">An Information Network by Consumer Information Network</p>
+      <h1 style="font-size:clamp(2.3rem,5vw,3.9rem)">{n.brandName}</h1>
+      <p class="mt-1"><StatusBadge status={n.status} /></p>
+      <p style="font-size:1.2rem;margin-top:1rem;color:var(--ink)">{n.tagline}.</p>
+      <div class="disclosure">
+        Information provided by this AI-powered service is for general educational purposes only. Consumer Information Network is an information and referral service. We are not a licensed provider of the products or services described on this page.
+      </div>
+      <p>{n.heroBody}</p>
+      {n.tollFreeTel ? (
+        <p class="mt-1"><a class="btn" href={`tel:${n.tollFreeTel}`}>Call {n.tollFree}</a></p>
+      ) : (
+        <p class="mt-1"><span class="chip">Phone number coming soon</span></p>
+      )}
+      <p class="quiet">Available 24 hours a day, 7 days a week. No cost to consumers.</p>
+    </div></div>
+  </section>
+
+  <section class="section-tight">
+    <div class="wrap"><div class="prose">
+      <h2>How the AI Agent can help</h2>
+      <ul class="bullets mt-1">
+        {n.helps.map((h) => <li>{h}</li>)}
+      </ul>
+    </div></div>
+  </section>
+
+  <section class="section-tight">
+    <div class="wrap">
+      <h2 class="mb-1">How it works</h2>
+      <div class="mt-2"><HowItWorks steps={n.steps} titles={['Ask', 'Understand', 'Connect, if you want']} /></div>
+    </div>
+  </section>
+
+  {n.extended?.map((x) => (
+    <section class="section-tight">
+      <div class="wrap"><div class="prose">
+        <h2>{x.heading}</h2>
+        {x.critical ? <div class="disclosure critical">{x.body}</div> : <p class="mt-1">{x.body}</p>}
+      </div>
+    </section>
+  ))}
+
+  <section class="section-tight">
+    <div class="wrap"><div class="prose stack">
+      <h2>Consent and recording</h2>
+      <p>By calling, you agree to interact with our AI Agent and to have the call recorded for quality and compliance. You may end the call at any time.</p>
+
+      <h2>What Consumer Information Network does not do</h2>
+      <p>{n.notDo}</p>
+
+      <h2>About us</h2>
+      <p>{n.aboutUs}</p>
+    </div></div>
+  </section>
+
+  <section class="section-tight" style="padding-bottom:3rem">
+    <div class="wrap">
+      <p><a class="btn-ghost" href="/information-networks"><span aria-hidden="true">←</span> All Information Networks</a></p>
+    </div>
+  </section>
+</BaseLayout>

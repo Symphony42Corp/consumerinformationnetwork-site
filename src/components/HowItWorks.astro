@@ -1,0 +1,15 @@
+---
+interface Props { steps?: [string, string, string]; titles?: [string, string, string] }
+const { steps = ['Every conversation starts with you.', 'Clear answers, no pressure.', 'A human Expert, when you ask.'], titles = ['Ask', 'Understand', 'Connect, if you want'] } = Astro.props;
+---
+<div class="steps">
+  {steps.map((s, i) => (
+    <div class="step">
+      <div class="num" aria-hidden="true">{i + 1}</div>
+      <div>
+        <h3>{titles[i]}</h3>
+        <p>{s}</p>
+      </div>
+    </div>
+  ))}
+</div>
