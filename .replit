@@ -1,3 +1,10 @@
+modules = ["nodejs-20"]
+run = ["npx", "--yes", "serve@14", "dist", "-l", "5000", "-n"]
+
+[[ports]]
+localPort = 5000
+externalPort = 80
+
 [deployment]
 deploymentTarget = "static"
 publicDir = "dist"
