@@ -14,6 +14,14 @@ const edits: [string, string][] = [
   // Security and retention: claim only what is defensible.
   ['We use encryption in transit and at rest, strict access controls, and annual third-party security audits. Interaction data is retained indefinitely for AI-improvement and compliance purposes unless you request deletion.',
    'We use reasonable administrative, technical, and organizational safeguards designed to protect personal information, including encryption in transit and access controls. Interaction data is retained for as long as reasonably necessary for service delivery, quality assurance, compliance, security, dispute resolution, and service improvement, unless you request deletion and deletion is legally and operationally permitted.'],
+  // Internal consistency with the Updated line above.
+  ['We may update this Privacy Policy from time to time. We will post the revised version with a new effective date. Continued use of our services after an update means you accept the revised terms. This policy was updated last in June 2025.',
+   'We may update this Privacy Policy from time to time. We will post the revised version with a new effective date. Continued use of our services after an update means you accept the revised terms. This policy was updated last in September 2026.'],
+  // Accuracy: transcripts improve our AI Agents and conversation flows; we do not train foundation models.
+  ['We use the information we collect to (a) deliver real-time answers, (b) improve and train AI language models using de-identified transcripts, and (c) maintain quality, security, and other legal compliance. Voice and video/avatar sessions may be recorded for these purposes.',
+   'We use the information we collect to (a) deliver real-time answers, (b) improve our AI Agents, including their prompts and conversation flows, using de-identified transcripts, and (c) maintain quality, security, and other legal compliance. Voice and video/avatar sessions may be recorded for these purposes.'],
+  ['You may request access to or deletion of your personal data, or opt out of future AI training use, by emailing privacy@consumerinformationnetwork.com or calling (410) 357-1232. You may also end any session at any time; if you do not wish to be recorded, inform the agent at the start of the conversation.',
+   'You may request access to or deletion of your personal data, or opt out of the use of your de-identified transcripts for service improvement, by emailing privacy@consumerinformationnetwork.com or calling (410) 357-1232. You may also end any session at any time; if you do not wish to be recorded, inform the agent at the start of the conversation.'],
 ];
 const applyEdits = (t: string) => edits.reduce((acc, [a, b]) => (acc === a ? b : acc), t);
 const insertAfter = 'We do not ask for or intentionally collect Social Security numbers';

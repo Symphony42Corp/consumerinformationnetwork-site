@@ -13,6 +13,8 @@
 4. Terms §5: "CIN does not place unsolicited outbound calls or texts." replaced with "The Service is available only when you initiate contact with us."
 5. Terms: Sections 8 and 9 added; "Updated" advanced to September 2026.
 6. Privacy Policy §3 no-PHI statement kept; the Senior Care page states the same.
+7. Privacy Policy §10 last-updated sentence aligned to September 2026.
+8. Privacy Policy §4/§6: "train AI language models" replaced with "improve our AI Agents, including their prompts and conversation flows" — Symphony42 does not train foundation models on consumer transcripts; the opt-out wording follows.
 The captured live text remains in `src/data/legal.json` unchanged; every edit is applied in the page templates and is reversible there.
 
 ## Publication state
