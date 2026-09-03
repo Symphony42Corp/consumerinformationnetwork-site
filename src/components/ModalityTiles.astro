@@ -44,7 +44,8 @@ const bars = [8, 14, 22, 30, 18, 26, 34, 20, 12, 24, 30, 16, 10, 20, 28, 14, 8, 
     const spans = Array.from(thread.querySelectorAll('[data-typed]'));
     const texts = spans.map((el) => el.textContent || '');
     // reserve the final height so bubbles don't jump while typing
-    spans.forEach((el) => { const b = el.closest('.bubble'); if (b) { b.style.minHeight = b.offsetHeight + 'px'; b.style.minWidth = b.offsetWidth + 'px'; } });
+    // reserve the final size so bubbles don't jump while typing — width is capped so it can never exceed the thread
+    spans.forEach((el) => { const b = el.closest('.bubble'); if (b) { const cap = Math.floor(thread.clientWidth * 0.86); b.style.minHeight = b.offsetHeight + 'px'; b.style.width = Math.min(b.offsetWidth, cap) + 'px'; b.style.maxWidth = '86%'; } });
     const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     const type = async (el, text, speed) => {
       el.classList.add('typing');
