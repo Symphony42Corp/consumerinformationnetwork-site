@@ -15,7 +15,10 @@ const links = [
         <img src="/images/cin-mark.png" alt="Consumer Information Network mark" width="40" height="40" />
         <span>Consumer Information Network</span>
       </a>
-      <ul>
+      <!-- Mobile menu: CSS-only toggle. The checkbox is visually hidden but keyboard-focusable. -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu" />
+      <label for="nav-toggle" class="menu-btn" title="Menu"><span class="menu-bars" aria-hidden="true"><i></i><i></i><i></i></span><span class="menu-text">Menu</span></label>
+      <ul class="nav-links">
         {links.map((l) => (
           <li><a class="link" href={l.href} aria-current={path === l.href ? 'page' : undefined}>{l.label}</a></li>
         ))}

@@ -24,7 +24,7 @@ import { publishedNetworks as networks } from '../data/networks';
       <h2>Information Network phone numbers</h2>
       <dl>
         {networks.map((n) => (
-          <div style="display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;border-bottom:1px solid var(--border)">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:.25rem 1rem;padding:.55rem 0;border-bottom:1px solid var(--border)">
             <dt style="font-weight:600;color:var(--ink)"><a href={`/${n.slug}`} style="color:inherit">{n.brandName}</a></dt>
             <dd style="margin:0">{n.tollFreeTel ? <a href={`tel:${n.tollFreeTel}`}>{n.tollFree}</a> : <span class="quiet">Preparing to launch</span>}</dd>
           </div>
