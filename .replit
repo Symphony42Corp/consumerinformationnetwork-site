@@ -10,12 +10,28 @@ deploymentTarget = "static"
 publicDir = "dist"
 
 [[deployment.rewrites]]
+from = "/auto-insurance/call"
+to = "/auto-insurance/call.html"
+
+[[deployment.rewrites]]
+from = "/auto-insurance/call/"
+to = "/auto-insurance/call.html"
+
+[[deployment.rewrites]]
 from = "/about"
 to = "/about.html"
 
 [[deployment.rewrites]]
 from = "/about/"
 to = "/about.html"
+
+[[deployment.rewrites]]
+from = "/auto-insurance"
+to = "/auto-insurance.html"
+
+[[deployment.rewrites]]
+from = "/auto-insurance/"
+to = "/auto-insurance.html"
 
 [[deployment.rewrites]]
 from = "/auto-insurance-1"
@@ -34,12 +50,12 @@ from = "/auto-insurance-information-network/"
 to = "/auto-insurance-information-network.html"
 
 [[deployment.rewrites]]
-from = "/auto-insurance"
-to = "/auto-insurance.html"
+from = "/burial-insurance"
+to = "/burial-insurance.html"
 
 [[deployment.rewrites]]
-from = "/auto-insurance/"
-to = "/auto-insurance.html"
+from = "/burial-insurance/"
+to = "/burial-insurance.html"
 
 [[deployment.rewrites]]
 from = "/burial-insurance-information-network"
@@ -48,14 +64,6 @@ to = "/burial-insurance-information-network.html"
 [[deployment.rewrites]]
 from = "/burial-insurance-information-network/"
 to = "/burial-insurance-information-network.html"
-
-[[deployment.rewrites]]
-from = "/burial-insurance"
-to = "/burial-insurance.html"
-
-[[deployment.rewrites]]
-from = "/burial-insurance/"
-to = "/burial-insurance.html"
 
 [[deployment.rewrites]]
 from = "/contact"
@@ -74,20 +82,20 @@ from = "/debt-relief/"
 to = "/debt-relief.html"
 
 [[deployment.rewrites]]
-from = "/home-insurance-information-network"
-to = "/home-insurance-information-network.html"
-
-[[deployment.rewrites]]
-from = "/home-insurance-information-network/"
-to = "/home-insurance-information-network.html"
-
-[[deployment.rewrites]]
 from = "/home-insurance"
 to = "/home-insurance.html"
 
 [[deployment.rewrites]]
 from = "/home-insurance/"
 to = "/home-insurance.html"
+
+[[deployment.rewrites]]
+from = "/home-insurance-information-network"
+to = "/home-insurance-information-network.html"
+
+[[deployment.rewrites]]
+from = "/home-insurance-information-network/"
+to = "/home-insurance-information-network.html"
 
 [[deployment.rewrites]]
 from = "/information-networks"
@@ -106,20 +114,20 @@ from = "/privacy-policy/"
 to = "/privacy-policy.html"
 
 [[deployment.rewrites]]
-from = "/senior-care-information-network"
-to = "/senior-care-information-network.html"
-
-[[deployment.rewrites]]
-from = "/senior-care-information-network/"
-to = "/senior-care-information-network.html"
-
-[[deployment.rewrites]]
 from = "/senior-care"
 to = "/senior-care.html"
 
 [[deployment.rewrites]]
 from = "/senior-care/"
 to = "/senior-care.html"
+
+[[deployment.rewrites]]
+from = "/senior-care-information-network"
+to = "/senior-care-information-network.html"
+
+[[deployment.rewrites]]
+from = "/senior-care-information-network/"
+to = "/senior-care-information-network.html"
 
 [[deployment.rewrites]]
 from = "/terms-of-service"

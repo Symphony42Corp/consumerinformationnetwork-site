@@ -8,7 +8,7 @@ export default defineConfig({
   output: 'static',
   trailingSlash: 'never',
   build: { format: 'file' },
-  integrations: [sitemap({ filter: (page) => !page.includes('/404') })],
+  integrations: [sitemap({ filter: (page) => !page.includes('/404') && !/\/call$/.test(page) })], // call pages are noindex and never in the sitemap
   redirects: {
     // Legacy Squarespace slugs → canonical long-form slugs (rendered as meta-refresh pages)
     '/auto-insurance': '/auto-insurance-information-network',
