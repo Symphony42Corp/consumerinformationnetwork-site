@@ -13,9 +13,9 @@ import { networks, type Network } from './networks';
 export interface AdsTracking {
   /** Google tag ID for the ads account, e.g. "AW-1234567890". Empty = render no tag at all. */
   tagId: string;
-  /** Conversion label of the "Calls from a website" action (forwarding-number swap). */
+  /** Conversion label of the "Calls from a website" action (forwarding-number swap). Empty = no phone snippet. */
   callLabel: string;
-  /** Optional conversion label of a "Clicks on your number" (click-to-call) action — the tap signal. */
+  /** Optional conversion label of a "Clicks on your number" (click-to-call) action — the tap signal. Empty = no tap event. */
   tapLabel?: string;
 }
 
@@ -71,10 +71,13 @@ export const aiinCall: CallPage = {
     { title: 'Talk in your own words', body: 'Describe your situation and ask whatever you need to ask.' },
     { title: 'Get connected, if you ask', body: 'With your permission, the AI Agent may transfer you to a participating licensed insurance professional.' },
   ],
-  // Fill these from the "AIIN LP Call" conversion action in the CIN Google Ads account.
-  // While tagId is empty the page renders with no tag; the page itself is complete.
+  // tagId is the CIN Google Ads account's conversion ID (read live by the Governor room, Sept 9 2026).
+  // callLabel / tapLabel come from the "AIIN LP Call" / "AIIN LP Tap" conversion actions once created
+  // (Governor-room bootstrap write, plan reply §4.2). Gating in CallLayout: tagId alone renders only the
+  // base Google tag; the forwarding-number snippet renders only when callLabel is set; the tap event only
+  // when tapLabel is set.
   ads: {
-    tagId: '',
+    tagId: 'AW-11394874943',
     callLabel: '',
     tapLabel: '',
   },

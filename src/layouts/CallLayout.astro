@@ -17,8 +17,9 @@ const title = `${page.defaultHeadline} — ${n.brandName}`;
 const description = `Call ${page.phoneDisplay}. An AI Agent answers instantly, 24 hours a day, at no cost to consumers, and may connect you with a participating licensed insurance professional when you ask.`;
 const year = new Date().getFullYear();
 
+// Three independent gates: base Google tag (tagId), forwarding-number snippet (callLabel), tap event (tapLabel).
 const ads = page.ads.tagId ? page.ads : null;
-const callSendTo = ads ? `${ads.tagId}/${ads.callLabel}` : '';
+const callSendTo = ads && ads.callLabel ? `${ads.tagId}/${ads.callLabel}` : '';
 const tapSendTo = ads && ads.tapLabel ? `${ads.tagId}/${ads.tapLabel}` : '';
 
 const headlineScript = `(function(){var m=${JSON.stringify(page.headlines)},b=${JSON.stringify(n.brandName)};try{var k=new URLSearchParams(location.search).get('hl');if(k&&Object.prototype.hasOwnProperty.call(m,k)){var h=document.getElementById('hl');if(h){h.textContent=m[k];document.title=m[k]+' \u2014 '+b;}}}catch(e){}})();`;
@@ -28,7 +29,7 @@ const gtagBoot = ads
   : '';
 // Website-call conversion snippet (Google Ads Help 6095883, Example 3): the callback
 // swaps BOTH the visible number and the tel: href on every call element on the page.
-const phoneSnippet = ads
+const phoneSnippet = callSendTo
   ? `window.cinPhoneSwap=function(f,m){if(!m)return;if(m.charAt(0)!=='+'){m='+'+m.replace(/[^0-9]/g,'');}var els=document.querySelectorAll('[data-call]');for(var i=0;i<els.length;i++){els[i].setAttribute('href','tel:'+m);var s=els[i].querySelector('[data-call-num]');if(s){s.textContent=f;}}};gtag('config',${JSON.stringify(callSendTo)},{'phone_conversion_number':${JSON.stringify(page.phoneDisplay)},'phone_conversion_callback':window.cinPhoneSwap});`
   : '';
 
@@ -125,7 +126,7 @@ main p,main li,.foot p{overflow-wrap:anywhere}
     </style>
     {ads && <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${ads.tagId}`}></script>}
     {ads && <script is:inline set:html={gtagBoot}></script>}
-    {ads && <script is:inline set:html={phoneSnippet}></script>}
+    {callSendTo && <script is:inline set:html={phoneSnippet}></script>}
     <noscript><style>.bar{transform:none}</style></noscript>
   </head>
   <body>
