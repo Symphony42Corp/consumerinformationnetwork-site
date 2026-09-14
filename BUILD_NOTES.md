@@ -58,6 +58,14 @@ All three approved as built: Instrument Serif headings (do not add Manrope; plan
 - Verified locally: `cinPhoneSwap(formatted, mobile)` rewrites text and `tel:` on both call elements (E.164 and plain-digit inputs); a tap pushes `event: conversion, send_to: AW-11394874943/8G6PCKGyx_IcEL_8v7kq`.
 - Note: the Publish of Sept 9 (23:31 GMT) shipped the ec83b62 build because these labels had not yet reached this room. This push is what that Publish was meant to carry.
 
-## Still open
-- Publish; then `#google-wcc-debug` + Tag Assistant on the live URL (acceptance 4 and 11) and Lighthouse LCP (acceptance 6).
+## Live verification (Sept 14, 2026, after Publish of e5e2b0d at 21:59 GMT)
+- Live HTML on www and apex byte-identical to the e5e2b0d build (apart from Replit's injected analytics script). Reviewed page and sitemap unchanged.
+- Acceptance 4 (tag fires): on load the page issues `googleadservices.com/pagead/conversion/11394874943/wcm?…dn=8888021722&cl=hgH-CJ6yx_IcEL_8v7kq&gclid=…` — the website-call tag with the AIIN LP Call label and the page's number.
+- Acceptance 11 (`#google-wcc-debug`): overlay reports "Using callback as target." Forced test swap ("Sending 999-999-9999 to callback.") rewrote both call elements — primary button and sticky bar — text and `tel:` href.
+- Acceptance 6 (Lighthouse mobile, simulated slow 4G, 4× CPU): performance 93; LCP 1.2 s (target 1.0 s) — TTFB 749 ms (connection setup + server, simulated) + render delay 401 ms; FCP = LCP, no render-blocking resources; CLS 0.001. Own-origin transfer ≈ 48 KB incl. favicon (budget 60 KB); Google's tag adds ≈ 190 KB async. Replit serves HTML with no `content-encoding` (≈ 10 KB compressible) and no `cache-control` — hosting-side, not page-side.
+- Real-network readings from this environment: LCP 174–565 ms.
+
+## Still open (outside this repo)
+- Governor project: final-URL switch (Option A) while PAUSED, now that the tag is live and Prompt B passes; second RSA pin in governed_ids.json in the same pass; K-count amendment.
+- Optional Replit hygiene (SPF): analytics-script toggle; HTML compression is not configurable on Static Deployment.
 - Governor project: final-URL switch while PAUSED (Option A: both RSAs → `/auto-insurance/call?hl=quotes`), after Prompt B passes; approval_status joins the pre-enable invariants.
