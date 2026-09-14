@@ -76,10 +76,13 @@ export const aiinCall: CallPage = {
   // (Governor-room bootstrap write, plan reply §4.2). Gating in CallLayout: tagId alone renders only the
   // base Google tag; the forwarding-number snippet renders only when callLabel is set; the tap event only
   // when tapLabel is set.
+  // Labels handed back by the Governor room's receipted bootstrap write (op BOOT-CONVACT-6e11f97c6fcb, Sept 9 2026):
+  //   AIIN LP Call · 7756437790 · AW-11394874943/hgH-CJ6yx_IcEL_8v7kq
+  //   AIIN LP Tap  · 7756437793 · AW-11394874943/8G6PCKGyx_IcEL_8v7kq
   ads: {
     tagId: 'AW-11394874943',
-    callLabel: '',
-    tapLabel: '',
+    callLabel: 'hgH-CJ6yx_IcEL_8v7kq',
+    tapLabel: '8G6PCKGyx_IcEL_8v7kq',
   },
 };
 

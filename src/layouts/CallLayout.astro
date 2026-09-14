@@ -33,7 +33,7 @@ const phoneSnippet = callSendTo
   ? `window.cinPhoneSwap=function(f,m){if(!m)return;if(m.charAt(0)!=='+'){m='+'+m.replace(/[^0-9]/g,'');}var els=document.querySelectorAll('[data-call]');for(var i=0;i<els.length;i++){els[i].setAttribute('href','tel:'+m);var s=els[i].querySelector('[data-call-num]');if(s){s.textContent=f;}}};gtag('config',${JSON.stringify(callSendTo)},{'phone_conversion_number':${JSON.stringify(page.phoneDisplay)},'phone_conversion_callback':window.cinPhoneSwap});`
   : '';
 
-const behaviorScript = `(function(){var T=${JSON.stringify(tapSendTo)};document.addEventListener('click',function(e){var t=e.target;while(t&&t!==document&&!(t.getAttribute&&t.hasAttribute('data-call')))t=t.parentNode;if(!t||t===document)return;if(T&&typeof gtag==='function'){gtag('event','conversion',{'send_to':T});}});var b=document.getElementById('bar'),c=document.getElementById('cta');if(!b||!c)return;if('IntersectionObserver' in window){new IntersectionObserver(function(en){b.classList.toggle('show',!en[0].isIntersecting);},{threshold:0}).observe(c);}else{b.classList.add('show');}})();`;
+const behaviorScript = `(function(){var T=${JSON.stringify(tapSendTo)};document.addEventListener('click',function(e){var t=e.target;while(t&&t!==document&&!(t.getAttribute&&t.hasAttribute('data-call')))t=t.parentNode;if(!t||t===document)return;if(T&&typeof gtag==='function'){gtag('event','conversion',{'send_to':T,'transport_type':'beacon'});}});var b=document.getElementById('bar'),c=document.getElementById('cta');if(!b||!c)return;if('IntersectionObserver' in window){new IntersectionObserver(function(en){b.classList.toggle('show',!en[0].isIntersecting);},{threshold:0}).observe(c);}else{b.classList.add('show');}})();`;
 ---
 <!doctype html>
 <html lang="en">

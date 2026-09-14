@@ -53,6 +53,11 @@ All three approved as built: Instrument Serif headings (do not add Manrope; plan
 - `ads.tagId = 'AW-11394874943'` (account conversion ID, read live by the Governor room). The base Google tag now renders; the forwarding-number snippet and tap event stay off until `callLabel` / `tapLabel` arrive from the Governor room's bootstrap write (AIIN LP Call — WEBSITE_CALL, 60 s, Secondary; AIIN LP Tap — CLICK_TO_CALL, Secondary).
 - Publish sequencing (Governor ruling): Publish #1 now; Publish #2 after the labels are wired.
 
+## Labels wired (Sept 14, 2026, third push)
+- `callLabel = hgH-CJ6yx_IcEL_8v7kq` (AIIN LP Call, 7756437790) and `tapLabel = 8G6PCKGyx_IcEL_8v7kq` (AIIN LP Tap, 7756437793), from the Governor room's receipted bootstrap write BOOT-CONVACT-6e11f97c6fcb. The forwarding-number snippet and the tap event now render. Tap event sends with `transport_type: beacon`.
+- Verified locally: `cinPhoneSwap(formatted, mobile)` rewrites text and `tel:` on both call elements (E.164 and plain-digit inputs); a tap pushes `event: conversion, send_to: AW-11394874943/8G6PCKGyx_IcEL_8v7kq`.
+- Note: the Publish of Sept 9 (23:31 GMT) shipped the ec83b62 build because these labels had not yet reached this room. This push is what that Publish was meant to carry.
+
 ## Still open
-- Wire `callLabel` / `tapLabel` when handed back; rebuild; parity diff; push; re-pull; Publish #2; then `#google-wcc-debug` + Tag Assistant (acceptance 4 and 11) and Lighthouse LCP on the live URL (acceptance 6).
+- Publish; then `#google-wcc-debug` + Tag Assistant on the live URL (acceptance 4 and 11) and Lighthouse LCP (acceptance 6).
 - Governor project: final-URL switch while PAUSED (Option A: both RSAs → `/auto-insurance/call?hl=quotes`), after Prompt B passes; approval_status joins the pre-enable invariants.
