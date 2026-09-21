@@ -1,0 +1,8 @@
+---
+// /auto-insurance — Google phone-number verification address for the two legacy call-only ads (verification URL = /auto-insurance).
+// Serves the SAME page as /auto-insurance/call (same component, same data): 888-802-1722 in text and tel:, Google tag unchanged.
+// noindex; excluded from the sitemap (astro.config.mjs); never linked from the indexed site.
+import CallLayout from '../layouts/CallLayout.astro';
+import { aiinCall } from '../data/callPages';
+---
+<CallLayout page={aiinCall} />
